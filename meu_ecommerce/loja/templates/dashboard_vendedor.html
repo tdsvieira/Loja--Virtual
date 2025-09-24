@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Vendedor - Loja Virtual</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        html, body { height: 100%; margin: 0; font-family: 'Roboto', sans-serif; }
+        body {
+            background-image: url("{% static 'loja/images/imagem1.jpeg' %}");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .dashboard-box {
+            background-color: rgba(0,0,0,0.5);
+            padding: 50px 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 { margin-bottom: 20px; }
+        p { font-size: 16px; margin-bottom: 30px; }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover { background-color: #45a049; transform: scale(1.02); }
+
+        .footer { font-size: 12px; color: #eee; margin-top: 15px; }
+    </style>
+</head>
+<body>
+    <div class="dashboard-box">
+        <h1>Dashboard Vendedor</h1>
+        <p>Bem-vindo, {{ user.username }}!</p>
+        <a href="{% url 'logout' %}" class="btn">Sair</a>
+        <div class="footer">
+            Protótipo de e-commerce - Django | TIAGO VIEIRA RU: 2822630
+        </div>
+    </div>
+</body>
+</html>
+
